@@ -9,33 +9,25 @@
 </header>
 
 <main>
-    <form>
+    <form method="POST" action="/create">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail4">Ім'я</label>
-                <input type="text" class="form-control" id="inputEmail4" placeholder="Введіть ім'я">
+                <input type="text" name="firstName" class="form-control" id="inputEmail4" placeholder="Введіть ім'я">
             </div>
             <div class="form-group col-md-6">
                 <label for="inputPassword4">Прізвище</label>
-                <input type="text" class="form-control" id="inputPassword4" placeholder="Введіть призвіще">
+                <input type="text" name="secondName" class="form-control" id="inputPassword4" placeholder="Введіть призвіще">
             </div>
         </div>
         <div class="form-group">
             <label for="inputAddress">Номер групи</label>
-            <input type="number" class="form-control" id="inputAddress" placeholder="291">
+            <input type="number" name="group" class="form-control" id="inputAddress" placeholder="291">
         </div>
 
         <div class="form-group">
             <label for="inputAddress2">Кількість звільнень</label>
-            <input type="number" class="form-control" id="inputAddress2" placeholder="">
-        </div>
-        <div class="form-group">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                    Угода на відпрацювання персональних даних
-                </label>
-            </div>
+            <input type="number" name="dismissal" class="form-control" id="inputAddress2" placeholder="">
         </div>
         <button type="submit" class="btn btn-primary">Відправити</button>
     </form>
