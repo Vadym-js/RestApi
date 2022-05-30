@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const PORT = 4040;
 const path = require('path');
-const morgan = require('morgan')
+const morgan = require('morgan');
 require('dotenv').config();
 //IMPORT ROUTES
 const postsRoutes = require('./routes/route');

@@ -6,7 +6,9 @@ const dismissalController = require('../controllers/dismissal-controller')
 router.get('/index',(req,res)=>{
     res.render('pages/index');
 })
-router.get('/about', dismissalController.getDis)
+router.get('/about', dismissalController.getDis);
+router.get('/about:id',dismissalController.deleteDis);
+
 router.get('/create',(req,res)=>{
     res.render('pages/create');
 })
@@ -22,6 +24,7 @@ router.get('/', (req, res)=> {
 
 router.post('/create',async (req,res)=>{
     const user = new Post({
+        id: req.body.id,
         firstName: req.body.firstName,
         secondName: req.body.secondName,
         group:req.body.group,
