@@ -14,7 +14,7 @@ class DismissalController{
         }
     }
     async deleteDis(req, res) {
-        const id = req.body.id;
+        const id = req.body.id; //
         await Dismissal.deleteOne({id}, () => {
             console.log(`Dismissal with id ${id} deleted !`);
             res.status(200).redirect('/about');
@@ -23,6 +23,7 @@ class DismissalController{
             res.status(500).json(e);
         });
     }
+
 };
 
 module.exports = new DismissalController();

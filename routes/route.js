@@ -7,7 +7,7 @@ router.get('/index',(req,res)=>{
     res.render('pages/index');
 })
 router.get('/about', dismissalController.getDis);
-router.get('/about:id',dismissalController.deleteDis);
+router.post('/about',dismissalController.deleteDis);
 
 router.get('/create',(req,res)=>{
     res.render('pages/create');

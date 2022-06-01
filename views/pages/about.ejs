@@ -11,7 +11,7 @@
     <table class="table">
         <thead>
         <tr>
-            <th scope="ID">ID</th>
+            <th scope="row">ID</th>
             <th scope="col">Ім'я</th>
             <th scope="col">Прізвище</th>
             <th scope="col">Група</th>
@@ -21,15 +21,15 @@
         <tbody>
         <% dismissals.forEach( dismissal => { %>
         <tr>
-            <th scope="row"><%= dismissal.id %></th>
+            <th><%= dismissal.id %></th>
             <td><%= dismissal.firstName%></td>
             <td><%= dismissal.secondName%></td>
             <td><%= dismissal.group%></td>
             <td><%= dismissal.dismissal%></td>
             <td>
-                <form action="/about:id" name="id"  method="POST">
-                    <button class="btn btn-primary" type="submit">
-                        <i class="bi bi-trash3-fill"></i>
+                <form action="/about" method="POST" >
+                    <button name="id" class="btn btn-primary" value="<%= dismissal.id%>" type="submit">
+                        <i class="bi bi-trash3-fill" data-id="<%= dismissal.id%>"></i>
                     </button>
                 </form>
             </td>
@@ -40,6 +40,16 @@
         <% } else {%>
             <h2 style="color: crimson;" >Користувачів немає</h2>
     <% } %>
+<script>
+    document.addEventListener('click',(e)=>{
+        const id = e.target?.dataset?.id || null;
+        if (id){
+            fetch(`/about/${id}`,{
+                method: 'DELETE',
+            });
+        }
+    });
+</script>
 
 <footer>
     <%- include('../partials/footer'); %>
