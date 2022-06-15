@@ -24,6 +24,17 @@ class DismissalController{
         });
     }
 
+    async updateDis(req, res){
+        try{
+            const id = req.body.id;
+            await Dismissal.updateOne({id}, req.body)
+            res.redirect('/about');
+        } catch (e){
+            console.log(`Error: ${e}!`);
+            res.status(500).json(e);
+        };
+    };
+
 };
 
 module.exports = new DismissalController();

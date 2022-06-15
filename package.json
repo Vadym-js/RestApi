@@ -1,7 +1,6 @@
 {
-  "name": "node-ejs",
+  "name": "ejs",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server",
@@ -20,5 +19,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
-  }
+  },
+  "description": ""
 }

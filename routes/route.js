@@ -1,23 +1,23 @@
 const express = require('express');
 const router = express.Router();
-const Post = require('../model/index-model')
-const dismissalController = require('../controllers/dismissal-controller')
+const Post = require('../model/index-model');
+const dismissalController = require('../controllers/dismissal-controller');
 
 router.get('/index',(req,res)=>{
     res.render('pages/index');
-})
+});
 router.get('/about', dismissalController.getDis);
 router.post('/about',dismissalController.deleteDis);
-
+router.post('/update',dismissalController.updateDis)
 router.get('/create',(req,res)=>{
     res.render('pages/create');
-})
+});
 router.get('/update',(req,res)=>{
     res.render('pages/update');
-})
+});
 router.get('/delete',(req,res)=>{
     res.render('pages/delete');
-})
+});
 router.get('/', (req, res)=> {
     res.render('pages/index');
 });

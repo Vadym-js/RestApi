@@ -27,6 +27,8 @@
             <td><%= dismissal.group%></td>
             <td><%= dismissal.dismissal%></td>
             <td>
+            </td>
+            <td>
                 <form action="/about" method="POST" >
                     <button name="id" class="btn btn-primary" value="<%= dismissal.id%>" type="submit">
                         <i class="bi bi-trash3-fill" data-id="<%= dismissal.id%>"></i>
@@ -40,16 +42,6 @@
         <% } else {%>
             <h2 style="color: crimson;" >Користувачів немає</h2>
     <% } %>
-<script>
-    document.addEventListener('click',(e)=>{
-        const id = e.target?.dataset?.id || null;
-        if (id){
-            fetch(`/about/${id}`,{
-                method: 'DELETE',
-            });
-        }
-    });
-</script>
 
 <footer>
     <%- include('../partials/footer'); %>
