@@ -1,12 +1,12 @@
 {
-  "name": "ejs",
+  "name": "REST API",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
     "start": "node server",
     "dev": "nodemon server"
   },
-  "author": "",
+  "author": "Vadym Vasylenko",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.0",
@@ -20,5 +20,5 @@
   "devDependencies": {
     "nodemon": "^2.0.16"
   },
-  "description": ""
+  "description": "NodeJs REST API"
 }

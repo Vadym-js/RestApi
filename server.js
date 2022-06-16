@@ -10,7 +10,7 @@ const postsRoutes = require('./routes/route');
 
 
 //ROUTES
-app.set('view engine', 'ejs');//задаем механизм просмотра EJS
+app.set('view engine', 'ejs');
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 app.use(express.urlencoded({extended:false}));
 app.use(postsRoutes)
